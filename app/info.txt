@@ -1,0 +1,12 @@
+build:
+docker build -t my_dashboard .
+
+run:
+docker run -p 8080:80 my_dashboard
+
+update a file:
+docker exec -i awesome_gagarin sh -c 'cat > /app/main.py' < app/main.py
+
+debug mode:
+docker run -it -p 8080:80 my_dashboard /bin/bash
+python main.py

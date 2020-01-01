@@ -1,9 +1,9 @@
-FROM tiangolo/uwsgi-nginx-flask:python3.6
+#FROM tiangolo/uwsgi-nginx-flask:python3.6
+FROM snaks9/uwsgi-nginx-flask-docker:python3.6
 LABEL maintainer="maintainer"
 
 COPY requirements.txt /tmp/
-COPY ./app /app
-
 RUN pip install -U pip && pip install -r /tmp/requirements.txt
 
+COPY ./app /app
 ENV NGINX_WORKER_PROCESSES auto
